@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load static %}
+{% block conteudo %}
+<ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="alert alert-{{ message.tags }}"{% endif %}>{{ message }}</li>
+    {% endfor %}
+    </ul>
+    {% if user.is_authenticated %}
+    <p class="logged-in-p">
+        Oi {{ user.username }} seja bem vindo.? 
+        
+    </p>
+{% endif %}
+{% endblock %}
